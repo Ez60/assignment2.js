@@ -41,8 +41,15 @@ Array.prototype.mySome = function(callback) {
 };
 
 // EVERY //
-Array.prototype.myEvery = function() {
-
+Array.prototype.myEvery = function(callback) {
+   for (let i = 0; i < this.length; i++)
+   {
+      if (!callback(this[i], i, this))
+      {
+         return false;
+      }
+   }
+   return true;
 };
 
 // REDUCE //
