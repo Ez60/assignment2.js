@@ -58,8 +58,19 @@ Array.prototype.myReduce = function() {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function() {
-
+Array.prototype.myIncludes = function(target, n = 0) {
+   if (n >= this.length)
+   {
+       return false;
+   }
+   for (let i = n; i < this.length; i++)
+   {
+      if (this[i] === target)
+      {
+          return true;
+      }
+   }
+   return false;
 };
 
 // INDEXOF //
