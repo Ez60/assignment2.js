@@ -16,8 +16,16 @@ Array.prototype.myMap = function(callback) {
 };
 
 // FILTER //
-Array.prototype.myFilter = function() {
-
+Array.prototype.myFilter = function(callback) {
+   let filterArray = [];
+   for (let i = 0; i < this.length; i++)
+   {
+      if (callback(this[i]))
+      {
+         filterArray.push(this[i]);
+      }
+   }
+   return filterArray;
 };
 
 // SOME //
