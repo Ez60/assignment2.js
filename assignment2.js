@@ -99,8 +99,19 @@ Array.prototype.myPush = function() {
 };
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function() {
-
+Array.prototype.myLastIndexOf = function(target, n = (this.length - 1)) {
+   if (n < 0)
+   {
+      n = this.length + n;
+   }
+   for (let i = n; i >= 0; i--)
+   {
+      if (this[i] === target)
+      {
+         return i;
+      }
+   }
+   return -1;
 };
 
 // KEYS //
