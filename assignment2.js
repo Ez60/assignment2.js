@@ -29,8 +29,15 @@ Array.prototype.myFilter = function(callback) {
 };
 
 // SOME //
-Array.prototype.mySome = function() {
-
+Array.prototype.mySome = function(callback) {
+   for (let i = 0; i < this.length; i++)
+   {
+       if (callback(this[i], i, this))
+       {
+          return true;
+       }
+   }
+   return false;
 };
 
 // EVERY //
